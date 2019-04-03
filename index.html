@@ -1,0 +1,52 @@
+<!doctype html>  
+<html>
+<head>
+<meta charset=utf-8>  
+<title>Formularze</title>
+</head>
+<body>
+
+
+
+
+	<img src="ankieta.jpg" style="float:right;"></img>
+	<br><br>
+    <div>
+        <label>Login:
+        <input id="name" type="text">
+        </label>
+        <br><br>
+        <label>Wybierz zainteresowanie: 
+        <select id="dzieki">
+            <option value="thx1">Sport</option>
+            <option value="thx2">Książki</option>
+            <option value="thx3">Informatyka</option>
+        </select>
+        </label>
+        <br>
+        <button id="button" type="button">Wyślij</button>
+		<button id="reset" type="button" onclick="window.location.reload()">Wyczyść formularz</button>
+		 <div id="message"></div>
+    </div>
+    
+  <script>
+  var button = document.getElementById("button");
+     
+  var onButtonClick = function() {
+    var name = document.getElementById("name").value;
+    var dzieki = document.getElementById("dzieki").value;
+    var greeting;
+    if (dzieki === "thx1") {
+        greeting = "Dziękuję za podanie, że Sport jest twoim zainteresowaniem " + name;
+    } else if (dzieki === "thx2") {
+        greeting = "Dziękuję za podanie, że Książki są twoim zainteresowaniem " + name;
+    } else {
+        greeting = "Dziękuję za podanie, że Informatyka jest twoim zainteresowaniem " + name;
+    }
+    document.getElementById("message").textContent += greeting;  
+  };
+  button.addEventListener("click", onButtonClick);
+  </script>
+
+</body>
+</html>
