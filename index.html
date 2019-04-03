@@ -3,13 +3,18 @@
 <head>
 <meta charset=utf-8>  
 <title>Formularze</title>
+<style>
+.papier
+{
+
+}
 </head>
 <body>
 
 
 
 
-	<img src="https://Aremis21.github.io/papier.jpg" style="float:left;"></img>
+	<img id="papier" src="papier.jpg" style="float:mid;"></img>
 	<br><br>
     <div>
         <label>Login:
@@ -45,7 +50,15 @@
     }
     document.getElementById("message").textContent = greeting;  
   };
+  
   button.addEventListener("click", onButtonClick);
+  
+  var papier = document.getElementById("papier");
+    var onMouseMove = function(event) {
+        console.log(event);
+        document.getElementById("message").textContent = "Jest to kartka pergaminu. ";        
+    };
+    face.addEventListener("mousemove", onMouseMove);
   </script>
 
 </body>
